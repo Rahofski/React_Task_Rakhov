@@ -1,0 +1,76 @@
+/* Общие стили для кнопки */
+.button {
+  cursor: pointer;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 15px 27px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContent {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 110.00000000000001%;
+}
+
+/* Контейнер для кнопки с иконкой */
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Стили для разных состояний */
+.submitButton {
+  background-color: var(--active-button-bg-color);
+}
+
+.submitButton:disabled {
+  background-color: var(--unactive-button-bg-color);
+  cursor: not-allowed;
+}
+
+.submitButton:disabled .buttonContent {
+  color: #787878;
+}
+
+.loading {
+  width: 402px;
+  height: 70px;
+  background-color: var(--font-bg-color);
+  cursor: wait;
+}
+
+.done {
+  background-color: var(--done-button-bg-color);
+  font-size: 35px;
+}
+
+.clear {
+  background-color: var(--clear-button-bg-color);
+  font-size: 35px;
+  color: #fff;
+}
+
+.error {
+  font-size: 35px;
+  background-color: var(--wrongFile-color);
+  color: #fff;
+}
+
+/* Стили для текста в кнопках */
+.button p {
+  font-weight: 400;
+  font-size: 35px;
+  white-space: nowrap;
+}
+
+/* Стили для иконки очистки */
+.clearIcon {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}

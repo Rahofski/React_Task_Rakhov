@@ -1,0 +1,11 @@
+.historyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

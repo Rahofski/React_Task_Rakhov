@@ -1,0 +1,31 @@
+.statsItem {
+  background-color: var(--statsItem-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 900.5px;
+  height: 117.5px;
+  gap: 5px;
+  border-radius: 24px;
+  padding: 10px;
+}
+
+.modalItem {
+  background-color: var(--modal-bg-color);
+  width: 920px;
+}
+
+.statsItem h3 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.statsItem p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}

@@ -1,0 +1,18 @@
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgb(255, 254, 254);
+  border-top: 6px solid var(--active-button-bg-color); /* зеленый сегмент */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* бесконечная анимация вращения */
+}
+
+/* Ключевые кадры для вращения */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

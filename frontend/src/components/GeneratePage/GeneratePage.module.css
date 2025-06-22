@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.generateButton {
+  background-color: var(--active-button-bg-color);
+  gap: 10px;
+  border-radius: 25px;
+  padding-top: 15px;
+  padding-right: 27px;
+  padding-bottom: 15px;
+  padding-left: 27px;
+  font-size: 35px;
+}
+
+.container p:last-child {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.failedText {
+  color: var(--wrongFile-color);
+}
+
+/* .generateButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+} */
