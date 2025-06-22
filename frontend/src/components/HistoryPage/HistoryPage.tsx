@@ -2,7 +2,6 @@ import { HistoryRecord } from './HistoryItem/HistoryItem'
 import styles from './HistoryPage.module.css'
 import { useStore } from '../../store/HistoryStore'
 import { Button } from '../Buttons/Button/Button'
-import { Link } from 'react-router-dom' // Изменяем Link на NavLink
 import { useNavigate } from 'react-router-dom'
 
 export const HistoryPage = () => {

@@ -12,6 +12,23 @@
   backdrop-filter: blur(2px);
 }
 
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 400px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1010;
+}
+
 .modalContent {
   overlay: hidden;
   width: 1100px;

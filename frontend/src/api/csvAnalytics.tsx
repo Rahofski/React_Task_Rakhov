@@ -11,7 +11,7 @@ export type AnalyticsResponse = {
 }
 
 const hasNullFields = (data: AnalyticsResponse): boolean => {
-  return Object.values(data).some((value) => value.toString() === '0')
+  return Object.values(data).some((value) => value === null)
 }
 
 export const uploadFile = async (
@@ -60,7 +60,7 @@ export const uploadFile = async (
             onProgress(parsedData) // Отправляем каждый результат в UI
             finalData = parsedData // Сохраняем последний результат
           } catch (e) {
-            console.warn('Ошибка парсинга:', line)
+            console.log(e)
           }
         }
       }

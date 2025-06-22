@@ -1,11 +1,11 @@
 import styles from './HistoryItem.module.css'
-import fileIcon from './icons/file.png'
-import smileIcon from './icons/smile.png'
-import sadIcon from './icons/sad.png'
-import sadDarkIcon from './icons/sad_dark.png'
-import smileDarkIcon from './icons/smile_dark.png'
+import fileIcon from './icons/file.svg'
+import smileIcon from './icons/smile.svg'
+import sadIcon from './icons/sad.svg'
+import sadDarkIcon from './icons/sad_dark.svg'
+import smileDarkIcon from './icons/smile_dark.svg'
 
-import deleteIcon from './icons/delete.png'
+import deleteIcon from './icons/delete.svg'
 
 import { Modal } from './Modal/Modal'
 import { useStore, type HistoryItem } from '../../../store/HistoryStore'

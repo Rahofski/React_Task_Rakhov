@@ -46,5 +46,5 @@
 
 /* Стиль для активной ссылки */
 .activeLink {
-  border-bottom: 2px solid var(--font-color); /* Подчеркивание для всего блока */
+  border-bottom: 3px solid var(--font-color); /* Подчеркивание для всего блока */
 }

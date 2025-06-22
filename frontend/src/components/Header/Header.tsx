@@ -1,8 +1,8 @@
 import styles from './Header.module.css'
-import logo from './images/logo.png'
-import upload from './images/upload.png'
-import generator from './images/generator.png'
-import history from './images/history.png'
+import logo from './icons/logo.svg'
+import upload from './icons/upload.svg'
+import generator from './icons/generator.svg'
+import history from './icons/history.svg'
 import { NavLink } from 'react-router-dom' // Изменяем Link на NavLink
 
 export const Header = () => {

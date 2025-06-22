@@ -4,10 +4,6 @@ import { generateFile } from '../../api/generator'
 import { Button } from '../Buttons/Button/Button'
 
 export const GeneratePage = () => {
-  const [size, setSize] = useState<number>(0.1)
-  const [withErrors, setWithErrors] = useState<boolean>(true)
-  const [maxSpend, setMaxSpend] = useState<string>('1000')
-
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isSuccess, setIsSuccess] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
@@ -21,14 +17,15 @@ export const GeneratePage = () => {
 
     try {
       const params = new URLSearchParams({
-        size: size.toString(),
-        withErrors: withErrors ? 'on' : 'off',
-        maxSpend,
+        size: '0.1',
+        withErrors: 'on',
+        maxSpend: '1000',
       })
 
       await generateFile(params)
       setIsSuccess(true)
     } catch (err) {
+      console.log(err)
       setIsError(true)
       setIsSuccess(false)
     } finally {

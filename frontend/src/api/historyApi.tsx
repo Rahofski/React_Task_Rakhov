@@ -4,7 +4,7 @@ import { createStorage } from './storage'
 
 const STORAGE_KEY = 'history'
 
-const storage = createStorage(STORAGE_KEY)
+const storage = createStorage<HistoryItem[]>(STORAGE_KEY)
 
 export const HistoryApi = {
   setNotes(notes: HistoryItem[]) {

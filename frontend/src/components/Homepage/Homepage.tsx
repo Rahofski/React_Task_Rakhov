@@ -28,15 +28,15 @@ export const Homepage = () => {
     setIsError(isError)
   }, [])
 
+  const [currentStats, setCurrentStats] = useState<AnalyticsResponse | null>(null)
+
   const handleClear = useCallback(() => {
     setSelectedFile(null)
     setIsError(false)
     setIsStat(false)
-    setIsSuccess(false) // Сбрасываем состояние успеха
-    window.location.reload()
+    setIsSuccess(false)
+    setCurrentStats(null)
   }, [])
-
-  const [currentStats, setCurrentStats] = useState<AnalyticsResponse | null>(null)
 
   const handleSubmit = async () => {
     if (!selectedFile) return
@@ -55,10 +55,11 @@ export const Homepage = () => {
         fileName: selectedFile.name,
         date: new Date().toLocaleString('ru-RU', { dateStyle: 'short' }),
         status: true,
-        stats: finalStats, // Гарантированно содержит данные
+        stats: finalStats,
       })
-      setIsSuccess(true) // Устанавливаем успешное состояние
+      setIsSuccess(true)
     } catch (err) {
+      console.log(err)
       setIsError(true)
       addToHistory({
         id: `${selectedFile.name}-${Date.now()}`,
