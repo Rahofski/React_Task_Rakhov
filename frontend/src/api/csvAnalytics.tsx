@@ -43,25 +43,20 @@ export const uploadFile = async (
       if (done) break
 
       buffer += decoder.decode(value)
+      console.log(buffer)
+
       const lines = buffer.split('\n')
 
       // Обрабатываем все полные строки
       for (let i = 0; i < lines.length - 1; i++) {
         const line = lines[i].trim()
         if (line) {
-          try {
-            const parsedData = JSON.parse(line) as AnalyticsResponse
-
-            if (hasNullFields(parsedData)) {
-              throw new Error('Обнаружены null значения в данных')
-            }
-            console.log(parsedData)
-
-            onProgress(parsedData) // Отправляем каждый результат в UI
-            finalData = parsedData // Сохраняем последний результат
-          } catch (e) {
-            console.log(e)
+          const parsedData = JSON.parse(line) as AnalyticsResponse
+          if (hasNullFields(parsedData)) {
+            throw new Error('Обнаружены null значения в данных')
           }
+          onProgress(parsedData)
+          finalData = parsedData
         }
       }
 

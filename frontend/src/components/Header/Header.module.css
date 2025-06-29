@@ -24,27 +24,3 @@
 .headerTitle {
   background-color: var(--font-bg-color);
 }
-
-.navList {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navItem {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 30px;
-  color: var(--font-color);
-  padding-bottom: 5px; /* Отступ для подчеркивания */
-  border-bottom: 2px solid transparent; /* Прозрачная граница по умолчанию */
-}
-
-/* Стиль для активной ссылки */
-.activeLink {
-  border-bottom: 3px solid var(--font-color); /* Подчеркивание для всего блока */
-}

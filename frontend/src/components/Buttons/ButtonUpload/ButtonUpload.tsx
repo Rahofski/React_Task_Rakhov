@@ -1,7 +1,7 @@
 // ButtonUpload.tsx
 import { useState, useCallback } from 'react'
 import styles from './ButtonUpload.module.css'
-import clearIcon from './icons/Clear.png'
+import { ClearButton } from '../ClearButton/ClearButton'
 import { Spinner } from '../../Spinner/Spinner' // Импорт спиннера
 
 interface ButtonUploadProps {
@@ -55,14 +55,10 @@ export const ButtonUpload = ({
     [onFileSelect]
   )
 
-  const handleClearClick = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation()
-      onClear()
-      setIsDragging(false)
-    },
-    [onClear]
-  )
+  const handleClearClick = useCallback(() => {
+    onClear()
+    setIsDragging(false)
+  }, [onClear])
 
   return (
     <div
@@ -80,6 +76,7 @@ export const ButtonUpload = ({
             : ''
         }
       `}
+      data-testid="upload-box"
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
@@ -90,6 +87,7 @@ export const ButtonUpload = ({
         accept=".csv"
         onChange={handleFileInput}
         style={{ display: 'none' }}
+        data-testid="file-input"
       />
 
       {!file ? (
@@ -110,16 +108,9 @@ export const ButtonUpload = ({
                     : styles.uploadFileButton
             }`}
           >
-            {isLoading ? <Spinner /> : <p>{file.name}</p>}
+            {isLoading ? <Spinner data-testid="spinner" /> : <p>{file.name}</p>}
           </label>
-          {!isLoading && (
-            <img
-              src={clearIcon}
-              alt="Очистить"
-              className={styles.clearIcon}
-              onClick={handleClearClick}
-            />
-          )}
+          {!isLoading && <ClearButton onClear={handleClearClick} data-testid="clear-button" />}
         </div>
       )}
 

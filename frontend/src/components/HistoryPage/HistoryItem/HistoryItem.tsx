@@ -13,7 +13,7 @@ import { useState } from 'react'
 import { STATS_ITEMS } from '../../Homepage/Stats/StatsItem/StatsMap'
 import { StatsItem } from '../../Homepage/Stats/StatsItem/StatsItem'
 
-export const HistoryRecord = (props: HistoryItem) => {
+export const HistoryRecord = (props: HistoryItem & { 'data-testid'?: string }) => {
   const { fileName, date, status, stats } = props
   const [isOpen, setIsOpen] = useState(false)
   const deleteHistoryItem = useStore((state) => state.deleteHistoryItem)
@@ -26,7 +26,7 @@ export const HistoryRecord = (props: HistoryItem) => {
 
   return (
     <>
-      <div className={styles.historyItem}>
+      <div className={styles.historyItem} data-testid={props['data-testid']}>
         <div className={styles.container} onClick={handleClick}>
           <div className={styles.file}>
             <img src={fileIcon} alt="иконка файла" />

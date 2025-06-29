@@ -20,7 +20,7 @@ export const HistoryPage = () => {
         <>
           <div className={styles.historyContainer}>
             {history.map((item) => (
-              <HistoryRecord key={item.id} {...item} />
+              <HistoryRecord key={item.id} {...item} data-testid="history-record" />
             ))}
           </div>
           <div className={styles.buttonContainer}>

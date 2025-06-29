@@ -17,7 +17,7 @@ function formatDayOfYear(dayOfYear: number): string {
   ]
   const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-  let day = dayOfYear
+  let day = dayOfYear + 1
   let monthIndex = 0
 
   while (monthIndex < daysInMonth.length && day > daysInMonth[monthIndex]) {

@@ -5,7 +5,7 @@ export type HistoryItem = {
   fileName: string
   date: string
   status: boolean
-  stats: AnalyticsResponse // Тип из вашего API
+  stats: AnalyticsResponse
 }
 
 import { create } from 'zustand'

@@ -21,7 +21,7 @@ export const Homepage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [isStat, setIsStat] = useState(false)
 
-  const [isSuccess, setIsSuccess] = useState(false) // Новое состояние
+  const [isSuccess, setIsSuccess] = useState(false)
 
   const handleFileSelect = useCallback((file: File | null, isError: boolean) => {
     setSelectedFile(file)

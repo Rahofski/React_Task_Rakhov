@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
 import styles from './Button.module.css'
 import { Spinner } from '../../Spinner/Spinner'
-import clearIcon from './icons/Clear.png'
+
+import { ClearButton } from '../ClearButton/ClearButton'
 
 interface ButtonProps {
   children: ReactNode
@@ -10,6 +11,7 @@ interface ButtonProps {
   disabled?: boolean
   variant?: 'submitButton' | 'clear' | 'error' | 'done' | 'loading'
   onClear?: () => void
+  'data-testid'?: string // Add data-testid prop
 }
 
 export const Button = ({
@@ -19,9 +21,9 @@ export const Button = ({
   disabled = false,
   variant = 'submitButton',
   onClear,
+  'data-testid': dataTestId, // Destructure data-testid
 }: ButtonProps) => {
-  const handleClearClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
+  const handleClearClick = () => {
     if (onClear) onClear()
   }
 
@@ -33,10 +35,12 @@ export const Button = ({
           className={`${styles.button} ${styles[variant]}`}
           onClick={onClick}
           disabled={disabled || isLoading}
+          data-testid={dataTestId} // Pass data-testid to button
         >
           {variant === 'done' ? 'Done!' : 'Ошибка'}
         </button>
-        <img src={clearIcon} alt="Clear" className={styles.clearIcon} onClick={handleClearClick} />
+
+        <ClearButton onClear={handleClearClick} data-testid="clear-button" />
       </div>
     )
   }
@@ -47,8 +51,13 @@ export const Button = ({
       className={`${styles.button} ${styles[variant]}`}
       onClick={onClick}
       disabled={disabled || isLoading}
+      data-testid={dataTestId} // Pass data-testid to button
     >
-      {isLoading ? <Spinner /> : <p className={styles.buttonContent}>{children}</p>}
+      {isLoading ? (
+        <Spinner data-testid="spinner" />
+      ) : (
+        <p className={styles.buttonContent}>{children}</p>
+      )}
     </button>
   )
 }

@@ -55,13 +55,18 @@ export const GeneratePage = () => {
         isLoading={isLoading}
         variant={getButtonVariant()}
         onClear={handleClear}
+        data-testid="generate-button"
       >
         Начать генерацию
       </Button>
 
-      {isLoading && <p>идёт процесс генерации</p>}
-      {isSuccess && <p>файл сгенерирован!</p>}
-      {isError && <p className={styles.failedText}>упс, не то...</p>}
+      {isLoading && <p data-testid="loading-message">идёт процесс генерации</p>}
+      {isSuccess && <p data-testid="success-message">файл сгенерирован!</p>}
+      {isError && (
+        <p className={styles.failedText} data-testid="error-message">
+          упс, не то...
+        </p>
+      )}
     </div>
   )
 }

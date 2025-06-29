@@ -12,7 +12,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null
 
   return createPortal(
-    <div className={styles.modalOverlay} onClick={onClose}>
+    <div className={styles.modalOverlay} onClick={onClose} data-testid="modal">
       <div className={styles.modalWrapper}>
         <button className={styles.closeButton} onClick={onClose}>
           <img src={clearIcon} alt="Закрыть" />
