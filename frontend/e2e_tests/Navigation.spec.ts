@@ -8,7 +8,7 @@ test.describe('Navigation', () => {
     await page.goto('http://localhost:5173/')
   })
 
-  test('should navigate between pages', async ({ page }) => {
+  test('Навигация должна работать между несколькими страницами', async ({ page }) => {
     // Проверка начальной страницы
     await expect(page).toHaveURL('http://localhost:5173/')
 
@@ -44,7 +44,7 @@ test.describe('Navigation', () => {
     await expect(analyticsSpan).toHaveAttribute('data-active', 'true')
   })
 
-  test('should persist navigation state on page reload', async ({ page }) => {
+  test('должно сохраняться состояние навигации при перезагрузке страницы', async ({ page }) => {
     const generatorSpan = page.locator(
       '[data-testid="navigation-container"] >> text=CSV Генератор >> xpath=..//span'
     )
